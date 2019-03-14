@@ -1,0 +1,140 @@
+digraph automata{
+	//定义节点关系
+	1->2[label="1-9"]
+	2->2[label="0-9"]
+	2->3[label="."]
+	3->3[label="0-9"]
+
+	1->4[label="\""]
+	4->4[label="ascii"]
+	4->5[label="\""]
+
+	1->6[label=<&epsilon;>]
+	6->7[label="+"]
+	7->8[label="+"]
+	7->9[label="="]
+
+	6->11[label="<"]
+	11->12[label="<"]
+	11->13[label="="]
+	12->14[label="="]
+
+	6->15[label="{"]
+	6->16[label="}"]
+	6->17[label="("]
+	6->18[label=")"]
+
+    6->19[label="a-zA-Z_"]
+	19->19[label="a-zA-Z0-9_"]
+
+	//定义节点
+	1[label="start"]
+	2[shape=doublecircle, label="int"]
+	3[shape=doublecircle, label="double"]
+	4[label=""]
+	5[shape=doublecircle, label="string"]
+	6[label=""]
+
+	7[shape=doublecircle, label="ADD"]
+	8[shape=doublecircle, label="SELF_INC"]
+	9[shape=doublecircle, label="ADD_EQ"]
+
+	11[shape=doublecircle, label="LESS"]
+	12[shape=doublecircle, label ="LEFT_SHIFT"]
+	13[shape=doublecircle, label="LEQ"]
+	14[shape=doublecircle, label="L_SHIFT_EQ"]
+
+	15[shape=doublecircle, label="LEFT_CURLY_BRACKETS"]
+	16[shape=doublecircle, label="RIGHT_CURLY_BRACKETS"]
+	17[shape=doublecircle, label="LEFT_PARENTHESIS"]
+	18[shape=doublecircle, label="RIGHT_PARENTHESIS"]
+
+	19[shape=doublecircle, label="identifier"]
+
+	6->20[label="-"]
+	20->21[label=">"]
+	20->22[label="="]
+	20->23[label="-"]
+	20[shape=doublecircle, label="SUB"]
+	21[shape=doublecircle, label="MEMBER_ACCESS"]
+	22[shape=doublecircle, label="SUB_EQ"]
+	23[shape=doublecircle, label="SELF_DEC"]
+
+    6->24[label=":"]
+    24->25[label=":"]
+	24[shape=doublecircle, label="COLON"]
+	25[shape=doublecircle, label="CLASS_SCOPE"]
+
+	6->26[label="?"]
+	26[shape=doublecircle, label="QUESTION"]
+
+	6->27[label=";"]
+	27[shape=doublecircle, label="SEMICOLON"]
+
+	6->28[label="."]
+	28[shape=doublecircle, label="PERIOD"]
+
+	6->29[label="!"]
+	29->30[label="="]
+	29[shape=doublecircle, label="LOGIC_NOT"]
+	30[shape=doublecircle, label="NEQ"]
+
+	6->31[label=">"]
+	31->32[label=">"]
+	32->33[label="="]
+	31->34[label="="]
+	31[shape=doublecircle, label="GREATER"]
+	32[shape=doublecircle, label="RIGHT_SHIFT"]
+	33[shape=doublecircle, label="R_SHIFT_EQ"]
+	34[shape=doublecircle, label="GEQ"]
+
+	6->35[label="|"]
+	35->36[label="|"]
+	35->37[label="="]
+	35[shape=doublecircle, label="OR"]
+	36[shape=doublecircle, label="LOGIC_OR"]
+	37[shape=doublecircle, label="OR_EQ"]
+
+	6->38[label="&"]
+	38->39[label="&"]
+	38->40[label="="]
+	38[shape=doublecircle, label="AND"]
+	39[shape=doublecircle, label="LOGIC_AND"]
+	40[shape=doublecircle, label="AND_EQ"]
+
+	6->41[label="\\"]
+	41->42[label="="]
+	41[shape=doublecircle, label="DIV"]
+	42[shape=doublecircle, label="DIV_EQ"]
+
+	6->43[label=","]
+	43[shape=doublecircle, label="COMMA"]
+
+	6->44[label="%"]
+	44->45[label="="]
+	44[shape=doublecircle, label="MOD"]
+	45[shape=doublecircle, label="MOD_EQ"]
+
+	6->46[label="^"]
+	46->47[label="="]
+	46[shape=doublecircle, label="XOR"]
+	47[shape=doublecircle, label="XOR_EQ"]
+
+	6->48[label="*"]
+	48->49[label="="]
+	48[shape=doublecircle, label="MUL"]
+	49[shape=doublecircle, label="MUL_EQ"]
+
+	6->50[label="="]
+	50->51[label="="]
+	50[shape=doublecircle, label="ASSIGN"]
+	51[shape=doublecircle, label="EQ"]
+
+	6->52[label="~"]
+	52[shape=doublecircle, label="NOT"]
+
+	6->53[label="["]
+	6->54[label="]"]
+	53[shape=doublecircle, label="LEFT_SQUARE_BRACKETS"]
+	54[shape=doublecircle, label="RIGHT_SQUARE_BRACKETS"]
+}
